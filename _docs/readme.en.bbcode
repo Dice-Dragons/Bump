@@ -1,0 +1,32 @@
+[HEADING=1][DD] Bump - Quick Start & Usage Guide[/HEADING]
+
+[HEADING=2]Installation[/HEADING]
+[HEADING=3]1. Upload[/HEADING]
+Upload contents to [ICODE]src/addons/cv6/Bump[/ICODE].
+
+[HEADING=3]2. Installation[/HEADING]
+[CODE=bash]php cmd.php xf-addon:install cv6/Bump[/CODE]
+
+[HEADING=2]CLI Usage Guide[/HEADING]
+To bump an add-on version, execute the [ICODE]cv6:bump[/ICODE] command in your XenForo root directory:
+
+[CODE=bash]php cmd.php cv6:bump Vendor/Addon [type] [state][/CODE]
+
+[HEADING=3]Parameters[/HEADING]
+[LIST]
+[*][B]Vendor/Addon[/B]: The ID of the add-on to bump (e.g. [ICODE]cv6/DiceRoller[/ICODE]).
+[*][B]type[/B] [I](optional)[/I]: Bump type ([ICODE]major[/ICODE], [ICODE]minor[/ICODE], [ICODE]patch[/ICODE], [ICODE]alpha[/ICODE], [ICODE]beta[/ICODE], [ICODE]rc[/ICODE], [ICODE]stable[/ICODE]).
+[*][B]state[/B] [I](optional)[/I]: Specific state override if checking release candidate/stability levels.
+[/LIST]
+
+[HEADING=3]Usage Examples[/HEADING]
+[LIST]
+[*][B]Bump patch version[/B] (e.g. 1.0.0 -> 1.0.1):
+[CODE=bash]php cmd.php cv6:bump Vendor/Addon patch[/CODE]
+[*][B]Bump minor version[/B] (e.g. 1.0.0 -> 1.1.0):
+[CODE=bash]php cmd.php cv6:bump Vendor/Addon minor[/CODE]
+[*][B]Change stability to stable[/B]:
+[CODE=bash]php cmd.php cv6:bump Vendor/Addon stable[/CODE]
+[*][B]Interactive prompt[/B]:
+[CODE=bash]php cmd.php cv6:bump Vendor/Addon[/CODE]
+[/LIST]

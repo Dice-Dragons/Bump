@@ -1,0 +1,20 @@
+{
+    "additional_files": [],
+    "minify": [],
+    "exec": [],
+    "exclude": [
+        "_docs",
+        "_releases",
+        "_tests",
+        "phpunit.xml",
+        "README*.md",
+        ".github",
+        ".gitignore",
+        ".gitattributes",
+        ".vscode",
+        ".cursorrules",
+        ".idea",
+        "*.md",
+        "build.json"
+    ]
+}

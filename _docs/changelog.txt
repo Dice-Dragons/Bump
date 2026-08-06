@@ -1,0 +1,14 @@
+[SIZE=6][B]1.0.0 Beta 3[/B][/SIZE]
+
+This update introduces significant improvements to the bump logic and usability.
+
+[B]Interactive Mode[/B]
+The command now supports an interactive mode. Simply run `php cmd.php dd:bump <id>` without additional arguments to trigger a wizard-style interface that guides you through the available bump options.
+
+[B]Smart Versioning[/B]
+Logic has been refined to handle state transitions more intelligently. When bumping from a Stable version to an Alpha, Beta, or Release Candidate, the system will now automatically increment the Minor version to start a new development cycle (e.g., `1.0.0` -> `1.1.0 Alpha 1`).
+
+[B]Improved Validation[/B]
+- Maximum version limits per state are now enforced (Alpha: 29, Beta: 49, RC: 69).
+- Interactive mode automatically filters out invalid options (e.g., if Beta reaches max, it won't be offered as an option).
+- Prevent accidental downgrades (e.g., trying to bump to Alpha from Beta).

@@ -1,0 +1,21 @@
+{
+    "legacy_addon_id": "",
+    "title": "[DD] Bump",
+    "description": "CLI command to simplify bumping add-on versions.",
+    "version_id": 1000070,
+    "version_string": "1.0.0",
+    "dev": "Hoffi",
+    "dev_url": "https://forum.dice-dragons.de/mitglieder/hoffi.1/",
+    "faq_url": "https://forum.dice-dragons.de/downloads/index.149/",
+    "support_url": "https://forum.dice-dragons.de/forum/bump/",
+    "extra_urls": {
+        "Hoffi@XenForo": "https://xenforo.com/community/members/hoffi.214/"
+    },
+    "require": {
+        "XF": [
+            2030010,
+            "XenForo 2.3.0+"
+        ]
+    },
+    "icon": "icon-code.png"
+}

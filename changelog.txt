@@ -1,0 +1,2 @@
+1.0.0 Beta 2
+ - CLI version bump command implementation for XenForo 2.3

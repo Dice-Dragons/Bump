@@ -1,0 +1,32 @@
+[HEADING=1][DD] Bump - Kurzanleitung & Nutzung[/HEADING]
+
+[HEADING=2]Installation[/HEADING]
+[HEADING=3]1. Hochladen[/HEADING]
+Lade den Inhalt nach [ICODE]src/addons/cv6/Bump[/ICODE] hoch.
+
+[HEADING=3]2. Installation[/HEADING]
+[CODE=bash]php cmd.php xf-addon:install cv6/Bump[/CODE]
+
+[HEADING=2]CLI-Kurzanleitung[/HEADING]
+Führe im Hauptverzeichnis deiner XenForo-Installation den Befehl [ICODE]cv6:bump[/ICODE] aus, um die Version eines Add-ons zu erhöhen:
+
+[CODE=bash]php cmd.php cv6:bump Vendor/Addon [type] [state][/CODE]
+
+[HEADING=3]Parameter[/HEADING]
+[LIST]
+[*][B]Vendor/Addon[/B]: Die ID des Add-ons (z. B. [ICODE]cv6/DiceRoller[/ICODE]).
+[*][B]type[/B] [I](optional)[/I]: Bumping-Typ ([ICODE]major[/ICODE], [ICODE]minor[/ICODE], [ICODE]patch[/ICODE], [ICODE]alpha[/ICODE], [ICODE]beta[/ICODE], [ICODE]rc[/ICODE], [ICODE]stable[/ICODE]).
+[*][B]state[/B] [I](optional)[/I]: Stabilitäts-Stufe falls spezifisch vorgegeben.
+[/LIST]
+
+[HEADING=3]Beispiele[/HEADING]
+[LIST]
+[*][B]Patch-Version erhöhen[/B] (z. B. 1.0.0 -> 1.0.1):
+[CODE=bash]php cmd.php cv6:bump Vendor/Addon patch[/CODE]
+[*][B]Minor-Version erhöhen[/B] (z. B. 1.0.0 -> 1.1.0):
+[CODE=bash]php cmd.php cv6:bump Vendor/Addon minor[/CODE]
+[*][B]Auf Stable setzen[/B]:
+[CODE=bash]php cmd.php cv6:bump Vendor/Addon stable[/CODE]
+[*][B]Interaktive Abfrage[/B]:
+[CODE=bash]php cmd.php cv6:bump Vendor/Addon[/CODE]
+[/LIST]
