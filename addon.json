@@ -12,6 +12,10 @@
         "Hoffi@XenForo": "https://xenforo.com/community/members/hoffi.214/"
     },
     "require": {
+        "php": [
+            "8.2.0",
+            "PHP 8.2.0+"
+        ],
         "XF": [
             2030010,
             "XenForo 2.3.0+"
