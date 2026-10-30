@@ -1,39 +1,47 @@
-# [DD] Bump - Quick Start & Usage Guide
+# [DD] Bump
+*This documentation is also available in: [Deutsch](README.de.md)*
 
-## Installation
-1. Upload contents to `src/addons/cv6/Bump`.
-2. Install via CLI:
-   ```bash
-   php cmd.php xf-addon:install cv6/Bump
-   ```
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg) ![XenForo](https://img.shields.io/badge/XenForo-2.3%2B-orange.svg) ![PHP](https://img.shields.io/badge/PHP-8.2%2B-qt.svg)
 
-## CLI Usage Guide
+**[DD] Bump** is a developer CLI tool for XenForo 2.3 that automates semantic version bumping for add-ons according to official XenForo standards.
 
-To bump an add-on version, execute the `cv6:bump` command in your XenForo root directory:
+## Features
+* **Semantic Versioning**: Calculates and increments Major, Minor, Patch, Alpha, Beta, RC, and Stable version IDs.
+* **Synchronized Updates**: Simultaneously updates `addon.json` and the `xf_addon` database table in a single step.
+* **Interactive Console**: Prompts for bump type interactively when executed without parameters.
+* **Safety Controls**: Includes `--dry-run` to preview changes and `--force` to bypass validation if needed.
+
+## Requirements
+* XenForo 2.3.0+, PHP 8.2.0+
+
+## Usage
+Execute the `dd:bump` command in your XenForo root directory:
 
 ```bash
-php cmd.php cv6:bump Vendor/Addon [type] [state]
+php cmd.php dd:bump Vendor/Addon [type] [state]
 ```
 
-### Parameters
+### Parameters & Options
 - **`Vendor/Addon`**: The ID of the add-on to bump (e.g. `cv6/DiceRoller`).
 - **`type`** *(optional)*: Bump type (`major`, `minor`, `patch`, `alpha`, `beta`, `rc`, `stable`).
-- **`state`** *(optional)*: Specific state override if checking release candidate/stability levels.
+- **`state`** *(optional)*: Specific state override if setting release candidate or stability levels.
+- **`--dry-run`**: Preview version changes without modifying files or database.
+- **`--force`** (`-f`): Skip validation of version ID.
 
-### Usage Examples
-- Bump patch version (e.g., 1.0.0 -> 1.0.1):
+### Examples
+- Bump patch version (e.g. 1.0.0 -> 1.0.1):
   ```bash
-  php cmd.php cv6:bump Vendor/Addon patch
+  php cmd.php dd:bump Vendor/Addon patch
   ```
-- Bump minor version (e.g., 1.0.0 -> 1.1.0):
+- Bump minor version (e.g. 1.0.0 -> 1.1.0):
   ```bash
-  php cmd.php cv6:bump Vendor/Addon minor
+  php cmd.php dd:bump Vendor/Addon minor
   ```
 - Change stability to stable:
   ```bash
-  php cmd.php cv6:bump Vendor/Addon stable
+  php cmd.php dd:bump Vendor/Addon stable
   ```
 - Interactive prompt:
   ```bash
-  php cmd.php cv6:bump Vendor/Addon
+  php cmd.php dd:bump Vendor/Addon
   ```

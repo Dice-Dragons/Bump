@@ -1,32 +1,42 @@
-[HEADING=1][DD] Bump - Kurzanleitung & Nutzung[/HEADING]
+[HEADING=1][DD] Bump[/HEADING]
 
-[HEADING=2]Installation[/HEADING]
-[HEADING=3]1. Hochladen[/HEADING]
-Lade den Inhalt nach [ICODE]src/addons/cv6/Bump[/ICODE] hoch.
+[B][DD] Bump[/B] ist ein Entwickler-CLI-Tool für XenForo 2.3 zur automatischen semantischen Versionserhöhung von Add-ons gemäß den offiziellen XenForo-Standards.
 
-[HEADING=3]2. Installation[/HEADING]
-[CODE=bash]php cmd.php xf-addon:install cv6/Bump[/CODE]
+[HEADING=2]Funktionen[/HEADING]
+[LIST]
+[*][B]Semantische Versionsberechnung[/B]: Berechnet und erhöht Major-, Minor-, Patch-, Alpha-, Beta-, RC- und Stable-Versions-IDs exakt nach XenForo-Standard.
+[*][B]Synchrone Aktualisierung[/B]: Aktualisiert [ICODE]addon.json[/ICODE] und die Datenbanktabelle [ICODE]xf_addon[/ICODE] zeitgleich in einem einzigen Schritt.
+[*][B]Interaktiver Modus[/B]: Fragt den Bumping-Typ interaktiv ab, falls keine Argumente übergeben werden.
+[*][B]Sicherheitsoptionen[/B]: Bietet [ICODE]--dry-run[/ICODE] zur Vorschau ohne Änderungen sowie [ICODE]--force[/ICODE] zum Überspringen von Validierungsprüfungen.
+[/LIST]
 
-[HEADING=2]CLI-Kurzanleitung[/HEADING]
-Führe im Hauptverzeichnis deiner XenForo-Installation den Befehl [ICODE]cv6:bump[/ICODE] aus, um die Version eines Add-ons zu erhöhen:
+[HEADING=2]Voraussetzungen[/HEADING]
+[LIST]
+[*]XenForo 2.3.0+, PHP 8.2.0+
+[/LIST]
 
-[CODE=bash]php cmd.php cv6:bump Vendor/Addon [type] [state][/CODE]
+[HEADING=2]Nutzung[/HEADING]
+Führe im Hauptverzeichnis deiner XenForo-Installation den Befehl [ICODE]dd:bump[/ICODE] aus:
 
-[HEADING=3]Parameter[/HEADING]
+[CODE=bash]php cmd.php dd:bump Vendor/Addon [type] [state][/CODE]
+
+[HEADING=3]Parameter & Optionen[/HEADING]
 [LIST]
 [*][B]Vendor/Addon[/B]: Die ID des Add-ons (z. B. [ICODE]cv6/DiceRoller[/ICODE]).
 [*][B]type[/B] [I](optional)[/I]: Bumping-Typ ([ICODE]major[/ICODE], [ICODE]minor[/ICODE], [ICODE]patch[/ICODE], [ICODE]alpha[/ICODE], [ICODE]beta[/ICODE], [ICODE]rc[/ICODE], [ICODE]stable[/ICODE]).
-[*][B]state[/B] [I](optional)[/I]: Stabilitäts-Stufe falls spezifisch vorgegeben.
+[*][B]state[/B] [I](optional)[/I]: Optionale Stabilitätsstufe.
+[*][B]--dry-run[/B]: Zeigt Änderungen an, ohne Dateien oder Datenbank zu verändern.
+[*][B]--force[/B] ([ICODE]-f[/ICODE]): Überspringt Validierungsprüfungen der Versions-ID.
 [/LIST]
 
 [HEADING=3]Beispiele[/HEADING]
 [LIST]
 [*][B]Patch-Version erhöhen[/B] (z. B. 1.0.0 -> 1.0.1):
-[CODE=bash]php cmd.php cv6:bump Vendor/Addon patch[/CODE]
+[CODE=bash]php cmd.php dd:bump Vendor/Addon patch[/CODE]
 [*][B]Minor-Version erhöhen[/B] (z. B. 1.0.0 -> 1.1.0):
-[CODE=bash]php cmd.php cv6:bump Vendor/Addon minor[/CODE]
+[CODE=bash]php cmd.php dd:bump Vendor/Addon minor[/CODE]
 [*][B]Auf Stable setzen[/B]:
-[CODE=bash]php cmd.php cv6:bump Vendor/Addon stable[/CODE]
+[CODE=bash]php cmd.php dd:bump Vendor/Addon stable[/CODE]
 [*][B]Interaktive Abfrage[/B]:
-[CODE=bash]php cmd.php cv6:bump Vendor/Addon[/CODE]
+[CODE=bash]php cmd.php dd:bump Vendor/Addon[/CODE]
 [/LIST]

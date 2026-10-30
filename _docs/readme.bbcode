@@ -1,32 +1,42 @@
-[HEADING=1][DD] Bump - Quick Start & Usage Guide[/HEADING]
+[HEADING=1][DD] Bump[/HEADING]
 
-[HEADING=2]Installation[/HEADING]
-[HEADING=3]1. Upload[/HEADING]
-Upload contents to [ICODE]src/addons/cv6/Bump[/ICODE].
+[B][DD] Bump[/B] is a developer CLI tool for XenForo 2.3 that automates semantic version bumping for add-ons according to official XenForo standards.
 
-[HEADING=3]2. Installation[/HEADING]
-[CODE=bash]php cmd.php xf-addon:install cv6/Bump[/CODE]
+[HEADING=2]Features[/HEADING]
+[LIST]
+[*][B]Semantic Versioning[/B]: Calculates and increments Major, Minor, Patch, Alpha, Beta, RC, and Stable version IDs.
+[*][B]Synchronized Updates[/B]: Simultaneously updates [ICODE]addon.json[/ICODE] and the [ICODE]xf_addon[/ICODE] database table in a single step.
+[*][B]Interactive Console[/B]: Prompts for bump type interactively when executed without parameters.
+[*][B]Safety Controls[/B]: Includes [ICODE]--dry-run[/ICODE] to preview changes and [ICODE]--force[/ICODE] to bypass validation if needed.
+[/LIST]
 
-[HEADING=2]CLI Usage Guide[/HEADING]
-To bump an add-on version, execute the [ICODE]cv6:bump[/ICODE] command in your XenForo root directory:
+[HEADING=2]Requirements[/HEADING]
+[LIST]
+[*]XenForo 2.3.0+, PHP 8.2.0+
+[/LIST]
 
-[CODE=bash]php cmd.php cv6:bump Vendor/Addon [type] [state][/CODE]
+[HEADING=2]Usage[/HEADING]
+Execute the [ICODE]dd:bump[/ICODE] command in your XenForo root directory:
 
-[HEADING=3]Parameters[/HEADING]
+[CODE=bash]php cmd.php dd:bump Vendor/Addon [type] [state][/CODE]
+
+[HEADING=3]Parameters & Options[/HEADING]
 [LIST]
 [*][B]Vendor/Addon[/B]: The ID of the add-on to bump (e.g. [ICODE]cv6/DiceRoller[/ICODE]).
 [*][B]type[/B] [I](optional)[/I]: Bump type ([ICODE]major[/ICODE], [ICODE]minor[/ICODE], [ICODE]patch[/ICODE], [ICODE]alpha[/ICODE], [ICODE]beta[/ICODE], [ICODE]rc[/ICODE], [ICODE]stable[/ICODE]).
-[*][B]state[/B] [I](optional)[/I]: Specific state override if checking release candidate/stability levels.
+[*][B]state[/B] [I](optional)[/I]: Specific state override if setting release candidate or stability levels.
+[*][B]--dry-run[/B]: Preview version changes without modifying files or database.
+[*][B]--force[/B] ([ICODE]-f[/ICODE]): Skip validation of version ID.
 [/LIST]
 
-[HEADING=3]Usage Examples[/HEADING]
+[HEADING=3]Examples[/HEADING]
 [LIST]
-[*][B]Bump patch version[/B] (e.g. 1.0.0 -> 1.0.1):
-[CODE=bash]php cmd.php cv6:bump Vendor/Addon patch[/CODE]
-[*][B]Bump minor version[/B] (e.g. 1.0.0 -> 1.1.0):
-[CODE=bash]php cmd.php cv6:bump Vendor/Addon minor[/CODE]
+[*][B]Patch bump[/B] (e.g. 1.0.0 -> 1.0.1):
+[CODE=bash]php cmd.php dd:bump Vendor/Addon patch[/CODE]
+[*][B]Minor bump[/B] (e.g. 1.0.0 -> 1.1.0):
+[CODE=bash]php cmd.php dd:bump Vendor/Addon minor[/CODE]
 [*][B]Change stability to stable[/B]:
-[CODE=bash]php cmd.php cv6:bump Vendor/Addon stable[/CODE]
+[CODE=bash]php cmd.php dd:bump Vendor/Addon stable[/CODE]
 [*][B]Interactive prompt[/B]:
-[CODE=bash]php cmd.php cv6:bump Vendor/Addon[/CODE]
+[CODE=bash]php cmd.php dd:bump Vendor/Addon[/CODE]
 [/LIST]
